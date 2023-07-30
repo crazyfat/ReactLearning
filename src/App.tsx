@@ -12,7 +12,14 @@ import Cmp05 from "./components/07redux"
 import Cmp06 from "./components/07redux/redux"
 import Cmp08 from "./components/08react-redux/container"
 import Cmp09 from "./components/09react-redux优化1"
+import Cmp11 from "./components/11setState"
 import Person from "./components/10多组件数据共享/person";
+import Cmp12 from "./components/12HOOKS";
+import Cmp13 from "./components/13context"
+import Cmp14 from "./components/14pureComponent"
+import Cmp15 from "./components/15slot"
+import ErrorTest from "./components/16ErrorBoundary/ErrorTest";
+import ErrorBoundary from "./components/16ErrorBoundary";
 const p = {
     name: 'zhangsan',
     age: 19
@@ -20,7 +27,9 @@ const p = {
 function App() {
   return (
     <div className="App">
-      <Person />
+        <ErrorBoundary>
+            <ErrorTest/>
+        </ErrorBoundary>
     </div>
   );
 }
