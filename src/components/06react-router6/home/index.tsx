@@ -1,9 +1,21 @@
 import React from 'react';
+import {NavLink, Outlet} from "react-router-dom";
 
 function Index() {
     return (
         <div>
-            <h1>this is Home !!</h1>
+            <h2>Home组件内容</h2>
+            <div>
+                <ul className="nav nav-tabs">
+                    <li>
+                        <NavLink className="list-group-item" to="news">News</NavLink>
+                    </li>
+                    <li>
+                        <NavLink className="list-group-item" to="message">Message</NavLink>
+                    </li>
+                </ul>
+                <Outlet/>
+            </div>
         </div>
     );
 }

@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="App">
         <ErrorBoundary>
-            <ErrorTest/>
+            <ReactRouter/>
         </ErrorBoundary>
     </div>
   );
