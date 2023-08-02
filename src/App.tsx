@@ -20,6 +20,8 @@ import Cmp14 from "./components/14pureComponent"
 import Cmp15 from "./components/15slot"
 import ErrorTest from "./components/16ErrorBoundary/ErrorTest";
 import ErrorBoundary from "./components/16ErrorBoundary";
+import Cmp18 from "./components/18父调子"
+import Function from "./components/18父调子/function";
 const p = {
     name: 'zhangsan',
     age: 19
@@ -28,7 +30,7 @@ function App() {
   return (
     <div className="App">
         <ErrorBoundary>
-            <ReactRouter/>
+            <Function/>
         </ErrorBoundary>
     </div>
   );
