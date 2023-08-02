@@ -28,7 +28,7 @@ export const counterSlice = createSlice({
     },
     reducers:{
         clearText: state => {
-          state.text = '初始的值1';
+          state.text = '初始的值12';
           state.id = '0'
         },
         concatText: (state, action) => {
