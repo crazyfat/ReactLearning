@@ -22,7 +22,8 @@ import ErrorTest from "./components/16ErrorBoundary/ErrorTest";
 import ErrorBoundary from "./components/16ErrorBoundary";
 import Cmp18 from "./components/18父调子"
 import Function from "./components/18父调子/function";
-import Cmp20 from "./components/20redux实践"
+import Cmp20 from "./components/20redux实践";
+import Cmp21 from "./components/21useReducer"
 const p = {
     name: 'zhangsan',
     age: 19
@@ -30,7 +31,7 @@ const p = {
 function App() {
   return (
     <div className="App">
-        <Cmp20/>
+        <Cmp21/>
     </div>
   );
 }
