@@ -32,14 +32,10 @@ class A extends Component {
 
 
 function B(){
+    const ctx = useContext(Mycontext);
     return (
         <div style={{backgroundColor: '#f00'}}>
-            this is B
-            <Consumer>
-                {
-                    ctx => (`name:${ctx.name}, age:${ctx.age}`)
-                }
-            </Consumer>
+            this is B{ctx.name}
             <D/>
         </div>
     )

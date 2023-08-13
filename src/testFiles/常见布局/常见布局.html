@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>两栏布局 左固定 右自适应</h1>
+    <h2>浮动：左浮动 右自适应</h2>
+    <div style="">
+        <div style="background-color: red;float: left;width: 200px">left </div>
+        <div style="background-color: yellow;"> right *</div>
+    </div>
+    <h2>浮动BFC：左浮动 右侧变为bfc</h2>
+    <div style="">
+        <div style="background-color: red;float: left;width: 200px">left </div>
+        <div style="background-color: yellow;"> right **</div>
+    </div>
+    <h2>position：父relative 左右absolute</h2>
+    <div style="position:relative;">
+        <div style="background-color: red; width: 200px; position: absolute; ">left </div>
+        <div style="background-color: yellow; position:absolute; left: 200px"> right **</div>
+    </div>
+    <h2>flex</h2>
+    <div style="display: flex; flex-direction: row;">
+        <div style="background-color: red; width: 200px;">left </div>
+        <div style="background-color: yellow;"> right **</div>
+    </div>
+    <h1>三栏布局 中间自适应</h1>
+    <h2>左右浮动</h2>
+    <div style="width: 300px">
+        <div style="background-color: red;float: left;width: 100px; opacity: 0.5">left </div>
+        <div style="background-color: green;float: right;width: 100px"> right</div>
+        <div style="background-color: yellow; margin-left: 100px"> mid **</div>
+    </div>
+    <h2>absolute</h2>
+    <div style="position: relative;width: 300px">
+        <div style="background-color: red; position: absolute; width: 100px; opacity: 0.5">left </div>
+        <div style="background-color: yellow;margin-left: 100px; margin-right: 100px;"> mid *********************</div>
+        <div style="background-color: green; position:absolute; width: 100px; right: 0; top: 0"> right</div>
+    </div>
+    <h2>flex</h2>
+    <div style="display: flex; width: 300px">
+        <div style="background-color: red; width: 100px; opacity: 0.5">left </div>
+        <div style="background-color: yellow; "> mid********</div>
+        <div style="background-color: green; width: 100px; right: 0;"> right</div>
+    </div>
+    <h1>双飞翼</h1>
+    <div style="width: 300px;">
+        <div style="float: left;width: 100%">
+            <div style="background-color: yellow;width: 200px;margin-left: 50px; margin-right: 50px"> mid********</div>
+        </div>
+        <div style="background-color: red; width: 50px; margin-left: -100%"><h3>left</h3></div>
+        <div style="background-color: green; width: 50px;float:left; margin-left: -50px"> right</div>
+    </div>
+
+
+</body>
+</html>
