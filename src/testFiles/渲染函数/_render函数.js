@@ -1,3 +1,6 @@
+/*
+    几个dom方法：document.createTextNode/document.createElement/dom.setAttribute/dom.appendChild
+ */
 function _render(vnode){
     if(typeof vnode === 'number') vnode = String(vnode);
     if(typeof vnode === 'string') return document.createTextNode(vnode);
@@ -5,6 +8,7 @@ function _render(vnode){
     const dom = document.createElement(vnode.tag);
     if(vnode.attrs){
         Object.keys(vnode.attrs).forEach((key)=>{
+
             const value = vnode.attrs[key];
             dom.setAttribute(key, value);
         })

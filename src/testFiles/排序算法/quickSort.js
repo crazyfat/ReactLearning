@@ -36,5 +36,37 @@ function qs(arr, left, right){
     if(index<right) qs(arr, index, right);
 }
 let arr2 = [3,5,78,213,4,3,1,32,23,4,2,7,34]
-qs(arr2, 0, arr2.length-1)
+
+function quicksort0826(arr){
+    if(arr.length<=1) return arr;
+    let left = [], right = [], pivot = arr[0];
+    for(let i = 1; i<arr.length; i++){
+        if(arr[i]<pivot) left.push(arr[i]);
+        else right.push(arr[i]);
+    }
+    return [...quicksort0826(left), pivot, ...quicksort0826(right)];
+}
+console.log(quicksort0826(arr2))
+
+function partition0826(arr, left, right){
+    const pivot = arr[Math.floor(left/2+right/2)];
+    while(left<=right){
+        while(arr[left]<pivot) left++;
+        while(arr[right]>pivot) right--;
+        if(left<=right){
+            [arr[left], arr[right]] = [arr[right], arr[left]];
+            right--;
+            left++;
+        }
+    }
+    return left;
+}
+function qs0826(arr, left, right){
+    const index = partition0826(arr, left, right);
+    if(left<index-1)
+        qs0826(arr, left, index-1);
+    if(index<right)
+        qs0826(arr, index, right);
+}
+qs0826(arr2, 0, arr2.length-1)
 console.log(arr2)
