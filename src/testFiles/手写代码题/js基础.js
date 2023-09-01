@@ -169,11 +169,20 @@ const step = async ()=>{
 
 // setTimeout实现setInterval
 function myInterval(fn, timeStamp){
-    setTimeout(()=>{
-        fn();
-        myInterval(fn, timeStamp);
-    }, timeStamp)
+    if(!clear){
+        setTimeout(()=>{
+            fn();
+            myInterval(fn, timeStamp);
+        }, timeStamp)
+    }
+    return ()=>{
+        clear = true;
+    }
 }
-myInterval(red, 3000)
+let clear = false;
+let swh = myInterval(red, 300)
+setTimeout(()=>{
+    swh()
+}, 3000)
 
 
