@@ -18,3 +18,25 @@ function _render(vnode){
     })
     return dom;
 }
+/*
+    vnode{
+        tag:'DIV",
+        attrs:{ id:'app' },
+        children:[{...}]
+    }
+ */
+function _render2(vnode){
+    if(typeof vnode === 'number') vnode = String(vnode);
+    if(typeof vnode === 'string') return document.createTextNode(vnode);
+    const dom = document.createElement(vnode.tag)
+    if(vnode.attrs){
+        Object.keys(vnode.attrs).forEach((key)=>{
+            dom.setAttribute(key, vnode.attrs[key]);
+        })
+    }
+    vnode.children.forEach((child)=>{
+        dom.appendChild(_render2(child));
+    })
+    return dom;
+
+}

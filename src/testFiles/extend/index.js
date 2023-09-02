@@ -28,3 +28,6 @@ k.cry()
 
 // 完美的方式：用原型链继承父类原型上的方法 用借用构造函数+call继承父类的属性
 
+let key1 = {a:'1'}, key2 = {a:1}, set = new Set();
+set.add({a:'1'})
+console.log(set.has({a:'1'}))

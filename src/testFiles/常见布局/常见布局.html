@@ -12,22 +12,22 @@
 <body>
     <h1>两栏布局 左固定 右自适应</h1>
     <h2>浮动：左浮动 右自适应</h2>
-    <div style="">
+    <div style="width: 400px">
         <div style="background-color: red;float: left;width: 200px">left </div>
         <div style="background-color: yellow;"> right *</div>
     </div>
     <h2>浮动BFC：左浮动 右侧变为bfc</h2>
-    <div style="">
+    <div style="width: 400px">
         <div style="background-color: red;float: left;width: 200px">left </div>
         <div style="background-color: yellow;"> right **</div>
     </div>
     <h2>position：父relative 左右absolute</h2>
-    <div style="position:relative;">
+    <div style="position:relative;width: 400px">
         <div style="background-color: red; width: 200px; position: absolute; ">left </div>
         <div style="background-color: yellow; position:absolute; left: 200px"> right **</div>
     </div>
     <h2>flex</h2>
-    <div style="display: flex; flex-direction: row;">
+    <div style="display: flex; flex-direction: row;width: 400px">
         <div style="background-color: red; width: 200px;">left </div>
         <div style="background-color: yellow;"> right **</div>
     </div>
