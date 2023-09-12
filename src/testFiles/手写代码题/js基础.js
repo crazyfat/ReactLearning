@@ -119,6 +119,16 @@ function flatten(arr){
     }
     return res;
 }
+function flatten2(arr){
+    let res = [];
+    for(let value of arr){
+        if(value instanceof Array){
+            res.push(flatten2(value))
+        }else
+            res.push(value)
+    }
+    return res;
+}
 console.log(flatten(arr2))
 console.log(arr2.flat(Infinity))
 //数组去重
@@ -180,9 +190,18 @@ function myInterval(fn, timeStamp){
     }
 }
 let clear = false;
-let swh = myInterval(red, 300)
-setTimeout(()=>{
-    swh()
-}, 3000)
-
+// let swh = myInterval(red, 300)
+// setTimeout(()=>{
+//     swh()
+// }, 3000)
+arr.reduce((prev, cur)=>prev+cur, 0)
+//reduce
+Array.prototype.myReduce = function(fn, init){
+    for(let i = 0; i<this.length; i++){
+        init  = fn(init, this[i]);
+    }
+    return init;
+}
+let arr4 = [3, 4, 5]
+console.log(arr4.myReduce((prev, cur)=>prev+cur, 10))
 

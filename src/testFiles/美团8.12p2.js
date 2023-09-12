@@ -18,3 +18,4 @@ const culDiff = (res) =>{
 }
 console.log(...arr)
 console.log(culDiff(arr))
+let obj = {a:2}

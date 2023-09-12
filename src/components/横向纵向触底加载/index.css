@@ -1,0 +1,21 @@
+.column{
+    margin-left: 20px;
+    width: 450px;
+    height: 700px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    border: 5px solid #5cb85c;
+}
+.row{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 700px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow-x: scroll;
+    border: 5px solid #06fff2;
+}

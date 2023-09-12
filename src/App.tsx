@@ -24,6 +24,9 @@ import Cmp18 from "./components/18父调子"
 import Function from "./components/18父调子/function";
 import Cmp20 from "./components/20redux实践"
 import Cmp21 from "./components/21dialog"
+import Cmp22 from "./components/组件卸载状态记录"
+import Cmp23 from "./components/飞猪"
+import Cmp24 from "./components/横向纵向触底加载"
 const p = {
     name: 'zhangsan',
     age: 19
@@ -31,7 +34,7 @@ const p = {
 function App() {
   return (
     <div className="App">
-        <Cmp21/>
+        <Cmp24/>
     </div>
   );
 }
