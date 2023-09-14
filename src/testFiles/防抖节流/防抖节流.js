@@ -18,3 +18,11 @@ function throttle(fn){
         }, time);
     }
 }
+function fn(){
+    this.name='fn';
+    return ()=>{
+        console.log(this)
+    }
+}
+let f = fn();
+f();
