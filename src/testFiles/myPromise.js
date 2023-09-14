@@ -15,3 +15,24 @@ const f3 = ()=>{
     return Promise.reject('1111');
 }
 f1();
+
+function pSome(promises){
+    return new Promise((resolve, reject)=>{
+        let cnt = 0, len = promises.length, res = [];
+        for(let i = 0; i<promises.length; i++){
+            let tmp = Promise.resolve(promises[i]);
+            tmp.then(
+                value=>{
+                    resolve(value);
+                },
+                reason => {
+                    res.push(reason);
+                    cnt++;
+                    if(cnt===len){
+                        reject(res);
+                    }
+                }
+            )
+        }
+    })
+}
