@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+  </style>
+</head>
+<body>
+<canvas id="canvas" width="700" height="550"></canvas>
+<script type="text/javascript">
+  let canvas = document.getElementById("canvas");
+  let ctx = canvas.getContext("2d");
+  let left = 0;
+  let timer = setInterval(function(){
+    ctx.clearRect(0,0,700,550);
+    ctx.beginPath();
+    ctx.fillStyle = "#ccc";
+    ctx.fillRect(left,0,100,100);
+    ctx.stroke();
+    if(left>700){
+      clearInterval(timer);
+    }
+    left += 1;
+  },16);
+</script>
+</body>
+</html>

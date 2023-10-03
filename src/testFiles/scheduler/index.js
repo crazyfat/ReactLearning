@@ -34,3 +34,9 @@ sl.addTask(500, 2)
 sl.addTask(300, 3)
 sl.addTask(400, 4)
 sl.taskStart()
+const arr = []
+function requeset(){
+    if(arr.length==0) return;
+    let tmp = arr.shift();
+    tmp().then(()=>requeset())
+}

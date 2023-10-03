@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        #rect {
+            width: 200px;
+            height: 200px;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+<div id="rect"></div>
+<script>
+    let elem = document.getElementById('rect');
+    let left = 0;
+    let timer = setInterval(function(){
+        if(left<window.innerWidth-200){
+            elem.style.marginLeft = left+'px';
+            left ++;
+        }else {
+            clearInterval(timer);
+        }
+    },16);
+</script>
+</body>
+</html>
