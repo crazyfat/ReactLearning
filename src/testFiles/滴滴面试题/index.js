@@ -31,9 +31,32 @@ let p3 = new Promise((resolve, reject)=>{
     resolve('p3');
 })
 let ps = [p1, p1, p3];
-func(ps);
+//func(ps);
 // promise测试
 // let mu = new Promise((resolve, reject)=>{
 //     console.log('error');
 //     reject('error');
 // }).then(()=>{},(e)=>{console.log(e)})
+
+// setTimeout实现setInterval
+function myInterval(fn, time){
+    let clear = false;
+    const ff = ()=>{
+        if(!clear){
+            setTimeout(()=>{
+                fn();
+                ff(fn, time);
+            }, time);
+        }
+    }
+    ff()
+    return ()=>{clear = true};
+}
+// let turnOff = myInterval(()=>{console.log('111')}, 100);
+// const t = setTimeout(()=>{
+//     turnOff()
+// }, 1000)
+// console.log(typeof t)
+setInterval(()=>{
+    console.log('666')
+}, 2000)

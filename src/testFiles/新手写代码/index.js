@@ -54,7 +54,7 @@ function _render(vnode){
 //这个写法更优秀
 function objFlatten(obj){
     const res = {}, path = [];
-    const backTraking = (obj)=>{
+    const backTracking = (obj)=>{
         if(typeof obj !== 'object'){
             res[path.join('.')] = obj;
             return;
@@ -63,19 +63,19 @@ function objFlatten(obj){
             obj.forEach((item, idx)=>{
                 let pre = path.pop();
                 path.push(`${pre}[${idx}]`);
-                backTraking(item);
+                backTracking(item);
                 path.pop();
                 path.push(pre)
             })
         }else{
             Object.keys(obj).forEach(key=>{
                 path.push(key);
-                backTraking(obj[key]);
+                backTracking(obj[key]);
                 path.pop()
             })
         }
     }
-    backTraking(obj);
+    backTracking(obj);
     return res;
 }
 const obj = {

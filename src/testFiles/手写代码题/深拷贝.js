@@ -6,10 +6,19 @@ function deepClone(obj, hash = new WeakMap()){
     if(hash.has(obj)) return hash.get(obj);
     let cloneObj = new obj.constructor();
     hash.set(obj, cloneObj);
-    for(let key of obj){
+    for(let key in obj){
         if(obj.hasOwnProperty(key)){
             cloneObj[key] = deepClone(obj[key], hash);
         }
     }
     return cloneObj;
+}
+let obj = {
+    a:1,
+    b:2,
+    c:3
+}
+Object.prototype.myName = ()=>{}
+for(let key in obj){
+    console.log('key: ', key);
 }

@@ -38,5 +38,4 @@ function _render2(vnode){
         dom.appendChild(_render2(child));
     })
     return dom;
-
 }
