@@ -1,13 +1,14 @@
 class Scheduler{
-    constructor(limit) {
+    constructor(limit, time) {
         this.limit = limit;
         this.que = [];
+        this.date = new Date().getTime();
     }
     addTask(time, order){
         const func = (i)=>{
             return new Promise((resolve)=>{
                 setTimeout(()=>{
-                    console.log(order+' in task '+i);
+                    console.log('id:'+order+' in task :'+i+' at:'+(new Date().getTime()-this.date));
                     resolve();
                 }, time);
             })
