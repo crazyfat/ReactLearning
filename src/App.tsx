@@ -28,6 +28,11 @@ import Cmp22 from "./components/组件卸载状态记录"
 import Cmp23 from "./components/飞猪"
 import Cmp24 from "./components/横向纵向触底加载"
 import Cmp25 from "./components/自定义hook/useHover"
+import Cmp26 from "./components/复习"
+import Father from "./components/父子渲染";
+import Cmp29 from "./components/reducerReview"
+import Cmp30 from "./components/useEffect"
+import Cmp31 from "./components/22slotReview"
 const p = {
     name: 'zhangsan',
     age: 19
@@ -35,7 +40,7 @@ const p = {
 function App() {
   return (
     <div className="App">
-        <Cmp25/>
+        <Cmp31/>
     </div>
   );
 }
